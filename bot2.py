@@ -16,9 +16,14 @@ def nimadir(call):
     if call.data == "img":
         rasm1 = open("Images/robotics-26.webp","rb")
         bot.send_photo(call.message.chat.id,rasm1)
+        bot.answer_callback_query(call.id)
     elif call.data == "vid":
         video1 = open("Images/venom.mp4","rb")
         bot.send_video(call.message.chat.id, video1)
-
+        bot.answer_callback_query(call.id)
+    elif call.data == "gif":
+        gif = open("Images/robotcha.png", "rb")
+        bot.send_photo(call.message.chat.id, gif)
+        bot.answer_callback_query(call.id)
 print("Dastur ishga tushdi")
 bot.infinity_polling()
